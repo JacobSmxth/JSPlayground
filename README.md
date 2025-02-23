@@ -29,18 +29,19 @@ A timer that counts down from a user-specified time or a default value.
   - Event Listeners
   - DOM Manipulation
 
-### 3. AI Image Search
+### 3. Random User Generator
 
-A basic image search tool that queries an API to display AI-generated or relevant images.
+A tool that fetches and displays random user profiles from an external API.
 
 - **Features:**
-  - Search functionality with keyword input.
-  - Pagination to browse through results.
+  - Fetches random user data (name, picture, location, etc.).
+  - Button to fetch a new user.
+  - Optional: Pagination or filtering by nationality/gender.
 - **Technologies Used:**
-  - API Handling
-  - Pagination
+  - Fetch API
   - Async/Await
   - DOM Manipulation
+  - Optional: Pagination, Filtering
 
 ### 4. Expense Tracker
 
@@ -63,7 +64,7 @@ A simple app to track income and expenses with persistent data.
 3. Navigate to the desired project folder (e.g., random-quote-generator/).
 4. Open the index.html file in a browser to see it in action.
 
-> Note: Some projects (like Random Quote Generator and AI Image Search) rely on external APIs. Ensure you have an internet connection and, if required, replace placeholder API keys with your own.
+> Note: Some projects (like Random Quote Generator and Random User Generator) rely on external APIs. Ensure you have an internet connection.
 
 ## Styling Disclaimer
 
