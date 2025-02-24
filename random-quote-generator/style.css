@@ -20,6 +20,7 @@ h1 {
 main {
     border: 1px solid #000;
     padding: 1rem;
+    max-width: 75vw;
 }
 
 section {

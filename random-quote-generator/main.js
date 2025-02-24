@@ -8,7 +8,9 @@ const quoteList = document.getElementById('quoteList');
 
 
 
-let savedQuotes = []
+let savedQuotes = JSON.parse(localStorage.getItem("quotes")) || [];
+
+let currentQuoteId
 
 
 
@@ -35,26 +37,71 @@ async function fetchJson(api) {
 /**
  * This function simply set the Ui to the quote
  * 
- * @returns {void}
+ * @returns {} 
  */
 async function getQuote() {
     const quoteApi = "https://api.quotable.io/quotes/random"
     const quoteStuff = await fetchJson(quoteApi);
-    console.log(quoteStuff);
-    const { content, author, id } = quoteStuff;
+    
+    currentQuoteId = quoteStuff._id
+
+    return quoteStuff
+}
+
+function loadSavedQuotes(savedArr) {
+    quoteList.innerHTML = ''
+    savedArr.forEach(thing => {
+        const item = document.createElement('li');
+        item.innerHTML = `
+        "<span class="savedQuote">${thing.content}</span>" - <span class="savedAuthor">${thing.author}</span>
+        `
+        quoteList.append(item)
+    })
+}
+
+async function setRandomQuote() {
+    const stuff = await getQuote()
+    const {content, author} = stuff
 
     quote.innerText = content;
     quoteAuthor.innerText = author;
-    
 }
 
-async function saveQuote() {
+function isDuplicate(arr, quote) {
+    if(arr.find(item => item.content === quote)) {
+        return true
+    }
+    return false
+}
 
+function saveQuote(arr, quote) {
+    if(!isDuplicate(arr, quote.content)) {
+        arr.push(quote);
+        localStorage.setItem("quotes", JSON.stringify(savedQuotes));
+    } 
 }
 
 
-
+function setUI() {
+    setRandomQuote()
+    loadSavedQuotes(savedQuotes)
+}
 
 generateBtn.addEventListener('click', () => {
-    getQuote()
+    setRandomQuote()
 })
+
+saveBtn.addEventListener('click', () => {
+    const content = quote.innerText;
+    const author = quoteAuthor.innerText;
+    const fullQuote = {
+        content: content,
+        author: author,
+    }
+    
+    saveQuote(savedQuotes, fullQuote);
+    loadSavedQuotes(savedQuotes)
+})
+
+// Start with random quote and load saved list
+setUI()
