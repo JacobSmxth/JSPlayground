@@ -52,6 +52,11 @@ Random-Quote-Generator/
 └── main.js       # JavaScript logic for fetching and saving quotes
 ```
 
+
+## Timelapse of Creation
+
+Watch the development process of this project in this condensed timelapse video: [Timelapse](https://drive.google.com/file/d/17mbvng1OG-rogBwo1j7-ky7BFjc6ekq1/view?usp=sharing). The video captures the entire creation workflow, from setting up the initial HTML structure to styling with CSS and implementing the JavaScript functionality.
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
