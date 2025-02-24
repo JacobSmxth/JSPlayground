@@ -1,87 +1,63 @@
-# JSPlayground
+# Random Quote Generator
 
-Welcome to this collection of small JavaScript projects! This repository contains four simple web applications built to practice core JavaScript concepts, DOM manipulation, and basic web development techniques. Each project is functional but uses minimal CSS, so don't expect anything fancy in terms of design—focus is on the JavaScript logic and functionality.
+## Description
 
-## Projects Overview
+This is a simple web application that generates random quotes using the [Quotable API](https://quotable.io/). Users can fetch new quotes with the click of a button and save their favorites, which are stored locally in the browser using local storage.
 
-### 1. Random Quote Generator
+## Features
 
-A simple tool that fetches and displays random quotes with the click of a button.
+- Fetch and display a random quote along with its author.
+- Save the currently displayed quote to a list of favorites.
+- View the list of saved quotes in a dedicated section.
+- Prevent duplicate quotes from being saved.
 
-- **Features:**
-  - Fetches quotes from an external API.
-  - Displays a new quote on button click.
-- **Technologies Used:**
-  - DOM Manipulation
-  - Event Listener
-  - Fetch API
-  - Async/Await
+## Installation
 
-### 2. Countdown Timer
+No complex installation is required. To use the application:
 
-A timer that counts down from a user-specified time or a default value.
+1. Download or clone this repository to your local machine.
+2. Open the `index.html` file directly in a modern web browser (e.g., Chrome, Firefox, Edge).
 
-- **Features:**
-  - Start, stop, and reset functionality.
-  - Real-time countdown display.
-- **Technologies Used:**
-  - setInterval()
-  - Event Listeners
-  - DOM Manipulation
+### Prerequisites
 
-### 3. Random User Generator
+- A modern web browser.
+- An internet connection to fetch quotes from the Quotable API.
 
-A tool that fetches and displays random user profiles from an external API.
+## Usage
 
-- **Features:**
-  - Fetches random user data (name, picture, location, etc.).
-  - Button to fetch a new user.
-  - Optional: Pagination or filtering by nationality/gender.
-- **Technologies Used:**
-  - Fetch API
-  - Async/Await
-  - DOM Manipulation
-  - Optional: Pagination, Filtering
+1. **Generate a Quote**: Click the **"Generate Quote"** button to fetch and display a new random quote.
+2. **Save a Quote**: Click the **"Save Quote"** button to add the currently displayed quote to your list of favorites.
+3. **View Saved Quotes**: Scroll to the **"Saved Quotes"** section to see all your saved quotes.
 
-### 4. Expense Tracker
+Saved quotes are stored in your browser's local storage, meaning they will persist even after you refresh the page or close the browser.
 
-A simple app to track income and expenses with persistent data.
+## How It Works
 
-- **Features:**
-  - Add, edit, and delete expense/income entries.
-  - Saves data to local storage.
-  - Displays total balance.
-- **Technologies Used:**
-  - Form Handling
-  - Local Storage
-  - Basic CRUD (Create, Read, Update, Delete)
+This application is built using the following technologies:
 
-## Getting Started
+- **HTML**: Provides the structure of the page, including buttons and sections for displaying quotes.
+- **CSS**: Styles the application with a clean, centered layout and hover effects on buttons.
+- **JavaScript**: Handles the logic, including:
+  - Fetching random quotes from the Quotable API.
+  - Saving quotes to local storage as a JSON array.
+  - Loading and displaying saved quotes.
+  - Preventing duplicate quotes from being saved.
 
-1. Clone this repository:
-   `git clone <repository-url>`
-2. Open the project folder in your code editor.
-3. Navigate to the desired project folder (e.g., random-quote-generator/).
-4. Open the index.html file in a browser to see it in action.
+The Quotable API (`https://api.quotable.io/quotes/random`) is used to retrieve random quotes, which are then displayed on the page. When a user saves a quote, it is added to an array in local storage and rendered in the "Saved Quotes" list.
 
-> Note: Some projects (like Random Quote Generator and Random User Generator) rely on external APIs. Ensure you have an internet connection.
+## Project Structure
 
-## Styling Disclaimer
+```
+Random-Quote-Generator/
+├── index.html    # Main HTML file
+├── style.css     # Stylesheet for the application
+└── main.js       # JavaScript logic for fetching and saving quotes
+```
 
-These projects prioritize functionality over aesthetics. The CSS is intentionally minimal—basic layouts and no polish. Feel free to enhance the styling as a fun exercise!
+## Timelapse of Creation
 
-## Purpose
-
-This repository is a learning playground for:
-
-- Core JavaScript skills (async operations, event handling, etc.).
-- Interacting with the DOM dynamically.
-- Working with APIs and local storage.
-
-## Contributions
-
-Feel free to fork this repo, improve the projects, or add your own! Suggestions or pull requests are welcome.
+Watch the development process of this project in this condensed timelapse video: [Timelapse](https://drive.google.com/file/d/17mbvng1OG-rogBwo1j7-ky7BFjc6ekq1/view?usp=sharing). The video captures the entire creation workflow, from setting up the initial HTML structure to styling with CSS and implementing the JavaScript functionality.
 
 ## License
 
-This project is open-source and available under the MIT License.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
